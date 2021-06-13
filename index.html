@@ -2,42 +2,63 @@
 <html>
 
 <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 </head>
 
 <body>
-    <a-scene background="color: white">
-        <a-camera position ="0 8 15"></a-camera>
+  <a-scene background="color:white">
 
-        <a-assets timeout="10000">
+    <a-camera position="0 8 15"></a-camera>
 
-            <a-asset-item id="tiger" scr="./models/tiger/Mesh_BengalTiger.gltf"></a-asset-item>
-            <a-asset-item id="giraffe" scr="./models/giraffe/scene.bin"></a-asset-item>
-            <!-- <a-asset-item id="fence" scr="./models/tiger/Mesh_BengalTiger.gltf"></a-asset-item> -->
-            <a-asset-item id="tree" scr="./models/tree/scene.gltf"></a-asset-item>
-            <a-asset-item id="photographer" scr="./models/photographer/scene.gltf"></a-asset-item>
-        </a-asets>
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
 
+      <a-asset-item id="tiger" src="./models/tiger/Mesh_BengalTiger.gltf"></a-asset-item>
+
+      <a-asset-item id="giraffe" src="./models/giraffe/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="fence" src="./models/wooden_fence/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="tree" src="./models/tree_for_games/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="photographer" src="./models/photographer/scene.gltf"></a-asset-item>
+
+      <img id="bg" src="./images/sky.jpg">
+
+    </a-assets>
+
+    <a-sky src="#bg"></a-sky>
+
+<<!--Tiger-->
 <a-entity>
-
-</a-entity position = "-5 2 0" rotation = "0 55 0" scale ="0.05 0.05 0.05" gltf-model="#tiger" shadow="cast:true">
-</a-entity>
-    </a-scene>
-    <a-entity>
-
-    </a-entity position = "-9 4 8.2" rotation = "0 90 0" scale ="1 1 1" gltf-model="#giraffe" shadow="cast:true;receive:false">
+    <a-entity position="-5 2 0" rotation="0 55 0" scale="0.05 0.05 0.05" gltf-model="#tiger" shadow="cast: true;">
     </a-entity>
-        </a-scene>
-        <a-entity>
+  </a-entity>
 
-        </a-entity position = "-10 0 -1" rotation = "0 0 0" scale ="0.009 0.009 0.009" gltf-model="#tree" shadow="cast:true;receive:false">
-        </a-entity>
-            </a-scene>
-            <a-entity>
+  <!--Giraffe-->
+  <a-entity>
+    <a-entity position="-9 4 8.2" rotation="0 90 0" scale="1 1 1" gltf-model="#giraffe"
+      shadow="cast: true; receive: false">
+    </a-entity>
+  </a-entity>
 
-            </a-entity position = "-20 0 0" rotation = "0 -90 0" scale ="1 1 1" gltf-model="#photographer" shadow="cast:true;receive:false">
-            </a-entity>
-                </a-scene>
-        </body>
-        </html>
-        
+  <!--Photographer-->
+  <a-entity>
+    <a-entity position="20 0 0" rotation="0 -90 0" scale="1 1 1" gltf-model="#photographer"
+      shadow="cast: true; receive: false">
+    </a-entity>
+  </a-entity>
+
+  <!--Trees-->
+
+  <a-entity position="-10 0 -1" rotation="0 0 0" scale="0.009 0.009 0.009" gltf-model="#tree"
+    shadow="cast: true; receive: false">
+  </a-entity>
+
+  <a-entity position="10 0 -1" rotation="0 0 0" scale="0.009 0.009 0.009" gltf-model="#tree"
+    shadow="cast: true; receive: false">
+  </a-entity>
+
+</a-scene>
+    </body>
+    </html>
